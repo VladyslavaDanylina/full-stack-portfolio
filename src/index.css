@@ -1,0 +1,211 @@
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@200&display=swap');
+
+@font-face {
+  font-family: 'Interphases';
+  src: url('/fonts/TT_Interphases_Pro_Trial_ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Interphases';
+  src: url('/fonts/Interphases-Pro-Trial-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+@keyframes blink {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+.loading-text {
+  font-size: 1.5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.dots .dot {
+  animation: blink 1.4s infinite;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+.dots .dot:nth-child(1) {
+  animation-delay: 0s;
+}
+.dots .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.dots .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+#preloader.hidden .dots .dot {
+  animation: fadeOut 0.6s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.rounded-circle {
+  border-radius: 10% !important;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar{
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Начальное состояние */
+#navbarMenu ul.d-lg-none {
+  transform: translateX(30px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* Показать (Bootstrap добавляет .show к #navbarMenu) */
+#navbarMenu.show ul.d-lg-none {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Плавное исчезновение */
+#navbarMenu.collapsing ul.d-lg-none {
+  transform: translateX(30px);
+  opacity: 0;
+}
+
+.min-vh-100 {
+  min-height: calc(100vh - 124px) !important;
+}
+
+body {
+  font-family: 'Interphases';
+  background-color: #000000;
+  font-weight: normal;
+  font-style: normal;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.title-light {
+  font-family: 'Interphases', sans-serif;
+  font-weight: 200;
+}
+
+a {
+  text-decoration: none;
+}
+
+.title {
+  font-family: 'Interphases', sans-serif;
+  text-transform: uppercase;
+}
+
+.btn-custom {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.title-custom {
+  color: rgb(192, 143, 247);
+}
+
+.arrow-wrapper {
+  background-color: transparent;
+  border: 1px solid rgb(255 255 255);
+  transition: all 0.3s ease;
+}
+
+.arrow-wrapper:hover {
+  background-color: white;
+  color: #0b0b2e;
+  transform: translateX(4px);
+}
+
+.arrow-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.arrow-wrapper:hover .arrow-icon {
+  fill: #0b0b2e;
+}
+@media (min-width: 768px) {
+  .arrow-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+.hover-bg-white:hover {
+  background-color: white;
+  color: #0b0b2e;
+  border-radius: 50%;
+}
+
+.custom-margin {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-height: 800px) {
+  .custom-margin-container {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (min-height: 800px) {
+  .custom-margin {
+    margin-top: 3rem;
+    margin-bottom: 3rem; /* Явно указать, если не нужно */
+  }
+  .custom-margin-container{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (min-height: 1080px) {
+  .custom-margin {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+  }
+}
