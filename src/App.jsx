@@ -30,7 +30,7 @@ function App() {
     <div
     className="bg-wrapper text-white"
     style={{
-      backgroundImage: "url('/images/background8.jpg')",
+      backgroundImage: "url('/images/background.jpg')",
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",

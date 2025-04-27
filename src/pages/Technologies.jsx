@@ -1,11 +1,10 @@
 import {
-  SiDjango, SiTypescript, SiJquery, SiMongodb, SiAngular, SiReact,
+  SiTypescript, SiJquery, SiMongodb, SiAngular, SiReact,
   SiNodedotjs, SiVuedotjs, SiExpress, SiBootstrap, SiTailwindcss,
   SiNextdotjs, SiGithub, SiFigma, SiAdobe
 } from "react-icons/si";
 
 const technologies = [
-  { name: "Django", icon: <SiDjango /> },
   { name: "TypeScript", icon: <SiTypescript /> },
   { name: "jQuery", icon: <SiJquery /> },
   { name: "MongoDB", icon: <SiMongodb /> },
